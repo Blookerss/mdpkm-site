@@ -1,7 +1,6 @@
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { AZURE_CLIENT_ID, AZURE_CLIENT_SECRET } from '$env/static/private';
-export const prerender = true;
 export const POST = (async ({ request }) => {
 	const { code, refreshToken } = await request.json() as RequestBody;
 	if (!code && !refreshToken)
