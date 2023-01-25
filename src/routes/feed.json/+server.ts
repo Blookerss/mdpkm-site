@@ -5,13 +5,13 @@ export const GET = async() => {
 	return json({
 		title: 'mdpkm',
 		language: 'en',
-		items: [Object.entries(modules).map(([path, { metadata }]) => ({
+		items: Object.entries(modules).map(([path, { metadata }]) => ({
 			title: metadata.title,
 			url: path.slice(2, -9),
 			tags: metadata.tags.split(','),
 			thumbnail_url: '',
 			data_published: metadata.date
-		}))]
+		}))
 	});
 }
 interface ModuleData {
