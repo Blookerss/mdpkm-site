@@ -3,6 +3,7 @@ title: mdpkm Release 2.0
 tags: release
 date: 2023-01-25
 authors: Blookers
+thumbnail: /img/post/2023-01-25-test.webp
 ---
 
 look at him

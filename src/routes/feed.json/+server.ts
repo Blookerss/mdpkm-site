@@ -8,8 +8,9 @@ export const GET = async() => {
 		items: Object.entries(modules).map(([path, { metadata }]) => ({
 			title: metadata.title,
 			url: path.slice(2, -9),
-			tags: metadata.tags.split(','),
-			thumbnail_url: '',
+			tags: metadata.tags.split('|'),
+			authors: metadata.authors.split(', '),
+			thumbnail_url: metadata.thumbnail,
 			data_published: metadata.date
 		}))
 	});
@@ -21,5 +22,6 @@ interface ModuleData {
 		date: string
 		title: string
 		authors: string
+		thumbnail: string
 	}
 }
