@@ -2,6 +2,7 @@ import { json } from '@sveltejs/kit';
 export const prerender = true;
 export const GET = async() => {
 	const modules: Record<string, ModuleData> = import.meta.glob('../posts/**/*.md', { eager: true });
+	const raw = import.meta.glob('../posts/**/*.md', { as: 'raw', eager: true });
 	return json({
 		title: 'mdpkm',
 		language: 'en',
@@ -11,7 +12,8 @@ export const GET = async() => {
 			tags: metadata.tags.split('|'),
 			authors: metadata.authors.split(', '),
 			thumbnail_url: metadata.thumbnail,
-			data_published: metadata.date
+			data_published: metadata.date,
+			body: raw[path].split('---\r\n\r\n').slice(1).join('')
 		}))
 	});
 }
