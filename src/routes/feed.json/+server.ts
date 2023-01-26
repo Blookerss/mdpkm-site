@@ -13,7 +13,7 @@ export const GET = async() => {
 			authors: metadata.authors.split(', '),
 			thumbnail_url: metadata.thumbnail,
 			data_published: metadata.date,
-			body: raw[path].split('---\r\n\r\n').slice(1).join('')
+			body: raw[path]
 		}))
 	});
 }
