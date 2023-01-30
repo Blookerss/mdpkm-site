@@ -4,7 +4,6 @@ import type { PageServerLoad } from './$types';
 export const prerender = true;
 export const load = (() => {
 	const modules: Record<string, ModuleData> = import.meta.glob('./**/*.md', { eager: true });
-	console.log(modules);
 	return {
 		posts: Object.entries(modules).map(([path, { metadata }]) => ({
 			url: 'posts' + path.slice(1, -9),
