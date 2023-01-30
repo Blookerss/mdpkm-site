@@ -20,6 +20,7 @@
 		"vite": "^4.0.4"
 	},
 	"dependencies": {
-		"@voxelified/voxeliface": "^1.0.0"
+		"@voxelified/voxeliface": "^1.0.0",
+		"sveltekit-i18n": "^2.2.2"
 	}
 }

@@ -17,7 +17,7 @@ export const GET = async() => {
 		}))
 	});
 }
-interface ModuleData {
+export interface ModuleData {
 	default: any
 	metadata: {
 		tags: string
